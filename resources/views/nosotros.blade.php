@@ -1,0 +1,147 @@
+@extends('layouts.layouts')
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var boton = document.getElementById('nosotros');
+    var contenidoOriginal = boton.textContent; // Guarda el contenido original
+
+    // Cambiar el contenido del elemento al cargar la página
+    boton.textContent = "NOSOTROS";
+    boton.classList.add("text-red-600");
+
+    // Evitar que el enlace recargue la página
+    boton.addEventListener("click", function(event) {
+        event.preventDefault();
+    });
+});
+</script>
+
+
+<!-- se inserta cuerpo del trabajo -->
+@section('content')
+    <div class="w-full h-auto flex flex-col gap-y-1 p-5">
+        <div class="w-full flex justify-center text-md md:text-2xl lg:text-4xl text-red-600 font-titulo1">
+            <span class="lg:ml-[25vw]">ACERCA</span>
+            <span class="mx-2 lg:mx-6">DE</span>
+            <span>NOSOTROS</span>
+        </div>
+        <!-- Estas son las lineas rojas -->
+        @include('layouts.lineasrojas')
+        <!-- Estas son las lineas rojas -->
+
+        <div class="w-full flex flex-grow gap-x-0 ">
+            <div class="w-[25vw] max-h-full ml-14 rounded-r-full pr-4 bg-red-600 hidden lg:block ">
+                <img class="w-[25vw] h-full rounded-r-full" src="{{ asset('images/nos11.jpg') }}" alt="" srcset="">
+            </div>
+            <p class="px-20 lg:px-7 w-full lg:mr-10 flex flex-col justify-center  md:text-xl xl:text-2xl lg:ml-[3vw] pb-5 text-justify">
+                <span class="font-bold text-red-600 md:text-2xl lg:text-3xl lg:text-center">
+                    Reseña Historica
+                </span>
+                Laboratorio del caribe S.A.S. inició labores en Sincelejo el 20 de marzo de 1984. Se obtiene el primer
+                Registro Sanitario para el producto comercializado bajo la marca Artrixin iniciándose la expansión y
+                posicionamiento en todo el territorio Nacional.
+                <br />
+                A través de los años Laboratorio del Caribe S.A.S. ha crecido de manera importante en el mercado Nacional,
+                manteniendo una posición de liderazgo y prestigio ante el cuerpo médico por la calidad de sus productos.
+            </p>
+        </div>
+
+        <!-- Estas son las lineas rojas -->
+        @include('layouts.lineasrojas')
+        <div class="w-full flex flex-grow gap-x-0 ">
+
+            <div class="w-[25vw] max-h-full ml-14  rounded-r-full pr-4 bg-red-600  hidden lg:block">
+                <img class="w-[26vw] h-full bg-white rounded-r-full " src="{{ asset('images/nos2.png') }}" alt=""
+                    srcset="">
+            </div>
+
+            <p class="px-20 lg:px-7 w-full lg:mr-10 flex flex-col justify-center  md:text-xl xl:text-2xl lg:ml-[3vw]  pb-5 text-justify">
+                <span class="font-bold text-red-600 md:text-2xl lg:text-3xl lg:text-center">
+                    Politícas de la calidad</span>
+
+
+                Laboratorio del Caribe S.A.S., es una empresa farmacéutica que está en un mejoramiento continuo, ofreciendo
+                productos y servicios confiables que cumplan con las normas de Buenas Prácticas de Manufactura, para
+                contribuir de esta forma al bienestar de la Sociedad.
+                <br />
+                Con ética y responsabilidad ofrecemos al mercado productos de excelente calidad, seguros y efectivos, que
+                satisfacen las necesidades del cliente, cumpliendo con normas Nacionales e Internacionales, y respetando el
+                medio ambiente.
+                <br />
+                A través de la gestión adecuada de los recursos y el compromiso asumido por nuestros colaboradores,
+                Laboratorio del Caribe S.A.S., genera el nivel de rentabilidad acorde a las expectativas de los socios,
+                permitiendo el desarrollo integral de los miembros de nuestra organización.
+            </p>
+        </div>
+
+        <!-- Estas son las lineas rojas -->
+        @include('layouts.lineasrojas')
+
+        <div class="w-full flex flex-grow gap-x-0">
+            <div class="w-[25vw] max-h-full ml-14  rounded-r-full pr-4 bg-red-600  hidden lg:block">
+                <img class="w-full h-full  rounded-r-full" src="{{ asset('images/nos31.jpg') }}" alt=""
+                    srcset="">
+            </div>
+            <p class="px-20 lg:px-7 w-full lg:mr-10 flex flex-col justify-center  md:text-xl xl:text-2xl lg:ml-[3vw]  pb-5 text-justify">
+                <span class="font-bold text-red-600 md:text-2xl lg:text-3xl lg:text-center">
+                    Mision</span>
+
+                Laboratorio del Caribe S.A.S., es una empresa farmacéutica que tiene como misión, comercializar productos de
+                excelente calidad, cumpliendo con todas las Normas exigidas por las entidades que nos vigilan, respetando el
+                medio ambiente y generando de esta forma bienestar a la comunidad.
+                <br />
+                Laboratorio del Caribe S.A.S. propenderá por el desarrollo integral de sus colaboradores al mismo tiempo que
+                satisface las expectativas de sus socios.
+            </p>
+        </div>
+        <!-- Estas son las lineas rojas -->
+        @include('layouts.lineasrojas')
+        <div class="w-full flex flex-grow gap-x-0">
+            <div class="w-[25vw] max-h-full ml-14  rounded-r-full pr-4 bg-red-600  hidden lg:block">
+                <img class="w-full h-full  rounded-r-full" src="{{ asset('images/nos44.jpeg') }}" alt=""
+                    srcset="">
+            </div>
+            <p class="px-20 lg:px-7 w-full lg:mr-10 flex flex-col justify-center  md:text-xl xl:text-2xl lg:ml-[3vw]  pb-5 text-justify">
+                <span class="font-bold text-red-600 md:text-2xl lg:text-3xl lg:text-center">
+                    Vision</span>
+
+                Laboratorios del Caribe S.A.S. va a ser uno de los más reconocidos Laboratorios farmacéuticos de Colombia,
+                ampliando su línea de productos, para hacer una contribución a la sociedad, a través de sus productos,
+                construyendo herramientas para ser más competitivos y posicionarse como uno de los principales laboratorios
+                farmacéuticos en las regiones donde hace presencia.
+            </p>
+        </div>
+
+        <!-- Estas son las lineas rojas -->
+        @include('layouts.lineasrojas')
+        <div class="w-full flex flex-grow gap-x-0">
+            <div class="w-[25vw] max-h-full ml-14  rounded-r-full pr-4 bg-red-600  hidden lg:block">
+                <img class="w-full h-full  rounded-r-full" src="{{ asset('images/nos61.jpg') }}" alt=""
+                    srcset="">
+            </div>
+            <p class="px-20 lg:px-7 w-full lg:mr-10 flex flex-col justify-center  md:text-xl xl:text-2xl lg:ml-[3vw]  pb-5 text-justify">
+                <span class="font-bold text-red-600 md:text-2xl lg:text-3xl lg:text-center">
+                    Valores corporativos</span>
+                <br />
+                <span class="font-bold">Respeto: </span> Aceptamos las decisiones y acciones de los clientes internos y
+                externos siendo tolerantes.
+                <br /><br />
+                <span class="font-bold">Compromiso:</span> Damos lo máximo de cada uno de nosotros con sentido de
+                pertenencia hacia la empresa.
+                <br /><br />
+                <span class="font-bold">Honestidad:</span> Actuamos conforme a los intereses comunes y no particulares de
+                acuerdo a la ley y las costumbres.
+                <br /><br />
+                <span class="font-bold">Lealtad:</span> Somos fieles frente a los compromisos y objetivos de la empresa.
+                <br /><br />
+                <span class="font-bold">Responsabilidad: </span> Somos conscientes de nuestras actuaciones, cumpliendo
+                cabalmente de forma que se logren los objetivos de la empresa.
+
+            </p>
+        </div>
+        <!-- Estas son las lineas rojas -->
+        @include('layouts.lineasrojas')
+    </div>
+    @include('layouts.footer')
+@endsection
+
