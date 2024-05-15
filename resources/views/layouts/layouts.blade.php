@@ -93,14 +93,14 @@
 
                 <div class="flex flex-row justify-center items-center">
                     @if (Auth::check())
-                        @role('admin')
+                    @hasrole('admin|master')
                             <div
                                 class="hidden lg:flex w-auto h-9  px-2 mr-[2vw] flex-row relative justify-center items-center bg-gray-100 text-sm text-gray-900 hover:scale-105 hover:text-red-600 border-2 hover:rounded-lg hover:bg-gray-200 rounded-lg">
                                 <a class="justify-center items-center" href="{{ url('/home') }}">
                                     C.R.U.D.
                                 </a>
                             </div>
-                        @endrole
+                    @endhasrole
                     @endif
                 </div>
 

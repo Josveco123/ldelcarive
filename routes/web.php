@@ -14,8 +14,8 @@ use App\Http\Controllers\Distribuidors;
 use App\Http\Controllers\HomeController;
 use App\Mail\Webcontacto;
 use App\Http\Controllers\Mailwebcontacto;
+use App\Http\Controllers\Usuarios;
 use App\Http\Middleware\CrudMiddleware;
-
 
 Route::get('/', [Welcome::class, 'welcome'])->name('welcome');
 
@@ -66,3 +66,12 @@ Route::post('/web', [Mailwebcontacto::class, 'enviarCorreo'])->name('enviarcorre
 Route::get('/distribuidor2', [Distribuidors::class, 'distribuidor2'])->name('distribuidor2');
 Route::get('/productos2', [Productos::class, 'productos'])->name('productos2')->middleware('auth');
 Route::get('/distribuidores', [Distribuidors::class, 'distribuidores'])->name('distribuidores');
+
+// area de routeer para usuarios
+Route::get('/usuarios', [Usuarios::class, 'index'])->middleware('can:userindex')->name('userindex'); // Mostrar todos los productos
+Route::get('/usuarios/create', [Usuarios::class, 'create'])->middleware('can:usercreate')->name('usercreate'); // Formulario de creacion de los productos
+Route::get('/usuarios/{producto}/edit', [Usuarios::class, 'edit'])->middleware('can:useredit')->name('useredit'); // Formulario de creacion de los productos
+Route::get('/usuarios/{id}', [Usuarios::class, 'show'])->middleware('can:usershow')->name('usershow'); // Mostrar un cliente específico
+Route::post('/usuarios', [Usuarios::class, 'store'])->middleware('can:userstore')->name('userstore'); // Crear un nuevo cliente
+Route::put('/usuarios/{id}', [Usuarios::class, 'update'])->middleware('can:userupdate')->name('userupdate'); // Actualizar un cliente existente
+Route::delete('/usuarios/{id}/destroy', [Usuarios::class, 'destroy'])->middleware('can:usereliminar')->name('usereliminar'); // Eliminar un cliente

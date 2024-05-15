@@ -1,9 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container grid grid-cols-1  lg:grid-cols-2  pt-20">
+    <div class="flex flex-col justify-center items-center w-full h-full border-r-2 border-black bg-red-50 p-10">
+
+        <div class="text-center text-lg p-2 text-red-600 ">¡Bienvenido a <strong> Laboratorio del Caribe sas!</strong>
+        </div>
+        <div class="text-lg text-justify">
+            <span>
+                Nos complace darte la bienvenida a nuestra plataforma en línea, donde encontrarás un mundo de
+                posibilidades para mejorar la calidad de vida. Al validar tu ingreso, has dado el primer paso hacia
+                mejorar la salud y bienestar con los medicamentos de vanguardia que ofrecemos. <br />
+                En <strong>Laboratorio del Caribe sas</strong>, entendemos que cada persona merece lo mejor cuando se
+                trata de su salud. Es por eso que hemos creado una amplia gama de medicamentos humanos que están
+                diseñados para abordar tus necesidades individuales y mejorar el bienestar en nuestro entorno.
+            </span>
+        </div>
+    </div>
+
+    <div class="row justify-content-center bg-blue-50 py-20">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 

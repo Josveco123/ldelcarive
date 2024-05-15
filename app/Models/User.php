@@ -27,6 +27,8 @@ class User extends Authenticatable
         'razon_social',
         'whatsapp',
         'ciudad',
+        'remember_token',
+        'email_verified_at',
     ];
 
     /**

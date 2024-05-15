@@ -28,7 +28,7 @@ class UserSeed extends Seeder
 
      User::create([
         'name'=> 'master',
-        'email'=> 'laboratorio1@laboratoriodelcaribe.com',
+        'email'=> 'laboratorio1@gmail.com',
         'email_verified_at'=>now(),
         'razon_social'=>'Laboratorios del Caribe',
         'whatsapp'=> '2323232323',
