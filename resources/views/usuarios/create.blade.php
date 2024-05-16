@@ -1,12 +1,7 @@
 @extends('home')
-
-@if (session('success'))
-    @section('crud')
-        <div class="alert alert-success bg-yellow-50  m-20 p-20 ">
-         <strong class="min-w-full text-lg  border-red-300 text-red-700">  {{ session('success') }}</strong>
-        </div>
-    @endsection
-@else
+@section('proceso')
+    <span class="text-lg">Mantenimiento Usuarios ==> crear Usuario</span>
+@endsection
     @section('crud')
         <div class="py-12 " style="height: 80vh;">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 h-[65vh]">
@@ -114,6 +109,5 @@
             </div>
         </div>
     @endsection
-@endif
 <!-- Script para ver la imagen antes de CREAR UN NUEVO PRODUCTO -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

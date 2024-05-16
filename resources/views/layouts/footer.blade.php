@@ -20,18 +20,18 @@
         </div>
         <div class="flex items-center justify-center border-r-4 border-white space-x-10 pt-5">
             <a href="https://www.facebook.com/labdelcaribesa" target="_blank">
-                <img class="w-auto h-6 sm:h-10   md:h-12 lg:h-16 hover:scale-110" src="images/facebook.svg" alt="" srcset="">
+                <img class="w-auto h-6 sm:h-10   md:h-12 lg:h-16 hover:scale-110" src="/images/facebook.svg" alt="" srcset="">
             </a>
             <a href="https://www.instagram.com/laboratoriodelcaribesas/embed" target="_blank">
-                <img class="w-auto h-6 sm:h-10   md:h-12  lg:h-16 hover:scale-110" src="images/instagram.svg" alt="" srcset="">
+                <img class="w-auto h-6 sm:h-10   md:h-12  lg:h-16 hover:scale-110" src="/images/instagram.svg" alt="" srcset="">
             </a>
             <a href="https://www.tiktok.com/@labodelcaribes.a.s" target="_blank">
-                <img class="w-auto h-6 sm:h-10   md:h-12  lg:h-16 hover:scale-110" src="images/tiktok.png" alt="" srcset="">
+                <img class="w-auto h-6 sm:h-10   md:h-12  lg:h-16 hover:scale-110" src="/images/tiktok.png" alt="" srcset="">
             </a>
             <!--<a class="whatsapp-btn" href="https://web.whatsapp.com/send?text=Buen%20día%20quisiera%20consultar%20sobre%20&amp;phone=573135120781" target="_blank" title="Chatea con Nosotros">-->
             <a href="https://api.whatsapp.com/send?text=Buen%20día%20quisiera%20consultar%20sobre%20&amp;phone=573135120781"
                 target="_blank" title="Chatea con Nosotros">
-                <img class="w-auto h-6 sm:h-10  md:h-12 lg:h-16 hover:scale-110" src="images/whatsapp.svg" alt="" srcset="">
+                <img class="w-auto h-6 sm:h-10  md:h-12 lg:h-16 hover:scale-110" src="/images/whatsapp.svg" alt="" srcset="">
             </a>
         </div>
     </div>

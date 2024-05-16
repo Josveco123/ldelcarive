@@ -1,8 +1,8 @@
-<div class="hidden xl:flex-auto">
+<div class="hidden xl:flex-auto flex-col">
     @extends('layouts.app')
     @section('content')
-        <div class="w-auto flex flex-col justify-normal">
-            <div class="px-10 flex flex-row space-x-1" style="height: 90vh;">
+        <div class="w-auto h-auto flex flex-col justify-normal ">
+            <div class="px-10 flex flex-row space-x-1 order-1" style="height: 90vh;">
                 <div class="w-[16vw] bg-gray-100 border-2 border-gray-300">
                     <div
                         class="w-full h-[3vw] flex flex-row justify-center items-center text-center text-[1.2vw] font-bold bg-gray-200">
@@ -11,7 +11,8 @@
 
                     <div class="w-full h-1 border-y-2 border-gray-400"></div>
 
-                    <ul class="flex w-auto marker:text-red-600 flex-col justify-between ml-[1vw] text-[1.2vw] space-y-2 mt-[2vw] list-[upper-roman]">
+                    <ul
+                        class="flex w-auto marker:text-red-600 flex-col justify-between ml-[1vw] text-[1.2vw] space-y-2 mt-[2vw] list-[upper-roman]">
                         <!-- opción 1 -->
                         <li class="menu-option  border-2 px-2 hover:border-red-500 hover:bg-gray-300 hover:rounded-lg">
                             <a class="no-underline" href="{{ route('productoindex') }}">Productos</a>
@@ -54,9 +55,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="flex">
-            @include('layouts.footer')
+
+            <div class="flex flex-auto order-2">
+                @include('layouts.footer')
+            </div>
         </div>
     @endsection
+
 </div>

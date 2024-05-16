@@ -166,7 +166,7 @@
             </div>
         </nav>
         <!-- comienza la parte variable del cuerpo de la hoja -->
-        <div>
+        <div class="mb-2">
             @yield('content')
         </div>
     </div>
