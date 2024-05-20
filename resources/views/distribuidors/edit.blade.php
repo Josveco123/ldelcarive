@@ -5,7 +5,7 @@
         <div class="w-auto mx-auto ">
             <h2
                 class="flex flex-row justify-center align-content-center font.bold text-[1vw] text-gray-800 border-y-2 border-dashed bg-gray-200 border-gray-300 dark:text-white leading-tight">
-                Edicion de Productos
+                Edicion de Distribuidor
             </h2>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6 lg:p-8 ">
 

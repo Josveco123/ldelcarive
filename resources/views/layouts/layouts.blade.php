@@ -171,8 +171,6 @@
         </div>
     </div>
     <script src="{{ asset('js/register.js') }}"></script>
-
-
     <script>
         // Asignar elementos a variables
         var navbarUser = document.getElementById('navbar-user');

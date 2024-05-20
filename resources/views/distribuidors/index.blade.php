@@ -9,7 +9,7 @@
                 <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
 
                     <div class="mb-4">
-                        <a href="{{ route('productocreate') }}"
+                        <a href="{{ route('distribuidorcreate') }}"
                             class="text-[1vw] bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 dark:hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded">
                             Crear distribuidor</a>
                     </div>

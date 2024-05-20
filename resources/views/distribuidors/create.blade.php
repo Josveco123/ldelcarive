@@ -10,7 +10,6 @@
             </h2>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6 lg:p-8 h-full">
 
-                <!--comienza el formulario        --->
 
                 <form method="POST" action="{{ route('distribuidorstore') }}" enctype="multipart/form-data"
                     class="max-w-2xl mx-auto">
@@ -113,10 +112,10 @@
                                 Save
                             </button>
 
-                                <a href="{{ route('distribuidorindex') }}"
-                                    class=" text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">
-                                    Cancel
-                                </a>
+                            <a href="{{ route('distribuidorindex') }}"
+                                class=" text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">
+                                Cancel
+                            </a>
 
                         </div>
                     </div>
@@ -131,6 +130,7 @@
 
 <!-- Script para ver la imagen antes de CREAR UN NUEVO PRODUCTO -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <script>
     $(document).ready(function(e) {
         $('#imagen').change(function() {
@@ -142,4 +142,4 @@
         });
     });
 </script>
-<script>
+

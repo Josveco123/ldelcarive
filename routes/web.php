@@ -40,7 +40,7 @@ Route::get('/home', [HomeController::class, 'index'])->middleware('can:home')->n
     // area de routeer para distribuiodor
     Route::get('/distribuidor', [Distribuidors::class, 'index'])->middleware('can:distribuidorindex')->name('distribuidorindex'); // Mostrar todos los productos
     Route::get('/distribuidor/create', [Distribuidors::class, 'create'])->middleware('can:distribuidorcreate')->name('distribuidorcreate'); // Formulario de creacion de los productos
-    Route::get('/distribuidor/{producto}/edit', [Distribuidors::class, 'edit'])->middleware('can:distribuidoredit')->name('distribuidoredit'); // Formulario de creacion de los productos
+    Route::get('/distribuidor/{distribuidor}/edit', [Distribuidors::class, 'edit'])->middleware('can:distribuidoredit')->name('distribuidoredit'); // Formulario de creacion de los productos
     Route::get('/distribuidor/{id}', [Distribuidors::class, 'show'])->middleware('can:distribuidorshow')->name('distribuidorshow'); // Mostrar un cliente específico
     Route::post('/distribuidor', [Distribuidors::class, 'store'])->middleware('can:distribuidorstore')->name('distribuidorstore'); // Crear un nuevo cliente
     Route::put('/distribuidor/{id}', [Distribuidors::class, 'update'])->middleware('can:distribuidorupdate')->name('distribuidorupdate'); // Actualizar un cliente existente
@@ -49,7 +49,7 @@ Route::get('/home', [HomeController::class, 'index'])->middleware('can:home')->n
     // area de routeer para blogs
     Route::get('/blog', [Blogs::class, 'index'])->middleware('can:blogindex')->name('blogindex'); // Mostrar todos los productos
     Route::get('/blog/create', [Blogs::class, 'create'])->middleware('can:blogcreate')->name('blogcreate'); // Formulario de creacion de los productos
-    Route::get('/blog/{producto}/edit', [Blogs::class, 'edit'])->middleware('can:blogedit')->name('blogedit'); // Formulario de creacion de los productos
+    Route::get('/blog/{blog}/edit', [Blogs::class, 'edit'])->middleware('can:blogedit')->name('blogedit'); // Formulario de creacion de los productos
     Route::get('/blog/{id}', [Blogs::class, 'show'])->middleware('can:blogshow')->name('blogshow'); // Mostrar un cliente específico
     Route::post('/blog', [Blogs::class, 'store'])->middleware('can:blogstore')->name('blogstore'); // Crear un nuevo cliente
     Route::put('/blog/{id}', [Blogs::class, 'update'])->middleware('can:blogupdate')->name('blogupdate'); // Actualizar un cliente existente
