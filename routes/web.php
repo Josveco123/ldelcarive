@@ -5,7 +5,7 @@ use App\Http\Controllers\Contactos;
 use App\Http\Controllers\Distribuidores;
 use App\Http\Controllers\Nosotros;
 use App\Http\Controllers\Productos;
-use App\Http\Controllers\welcome;
+use App\Http\Controllers\Welcome;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\FichaController;
@@ -16,10 +16,13 @@ use App\Mail\Webcontacto;
 use App\Http\Controllers\Mailwebcontacto;
 use App\Http\Controllers\Usuarios;
 use App\Http\Middleware\CrudMiddleware;
+use App\Http\Controllers\auth\LoginController;
 
 Route::get('/', [Welcome::class, 'welcome'])->name('welcome');
 
-Auth::routes();
+Route::get('/login', [LoginController::class, 'showLoginForm']);
+
+Auth::routes(['except' => ['login']]);
 
 Route::get('/home', [HomeController::class, 'index'])->middleware('can:home')->name('home');
 
