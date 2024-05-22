@@ -59,7 +59,7 @@
                     </div>
 
                     <div id="mnu-user"
-                        class="w-32 lg:w-auto h-auto  hidden  bg-white rounded-xl pt-1 justify-start lg:bg-gray-100 absolute z-100 lg:left-0 lg:static lg:top-0 lg:flex items-center lg:justify-center ">
+                        class="w-24 text-xs ml-[-25px] md:ml-[-15px] sm:w-28 md:w-32 lg:w-auto h-auto  hidden  bg-white rounded-xl pt-1 justify-start lg:bg-gray-100 absolute z-100 lg:left-0 lg:static lg:top-0 lg:flex items-center lg:justify-center ">
                         <ul
                             class="  border-2 border-white pb-2 w-full lg:w-auto h-auto flex flex-col  list-none justify-start items-start font-normal sm:text-sm md:text-normal lg:text-md xl:text-xl rounded-lg space-y-2 lg:space-x-6 lg:flex-row ">
                             <li class="w-full lg:w-auto hover:bg-gray-300 rounded-xl mt-0 lg:mt-2">
@@ -113,7 +113,7 @@
                             @csrf
 
                             <div id="mostrarregistra"
-                                class="mt-6 w-auto h-auto p-2 flex flex-col justify-center items-center bg-gray-100 text-xl text-gray-900 border-2 rounded-full hover:scale-105 hover:rounded-2xl hover:bg-gray-200 hover:text-red-600 hover:border-2 hover:border-white">
+                                class="mt-8 w-auto h-auto p-2 flex flex-col justify-center items-center bg-gray-100 text-xl text-gray-900 border-2 rounded-full hover:scale-105 hover:rounded-2xl hover:bg-gray-200 hover:text-red-600 hover:border-2 hover:border-white">
                                 <a type="submit" class="flex w-full lg:w-8 lg:h-8 justify-center items-center">
                                     <img class="w-5 h-5 object-cover" src="{{ asset('images/usuario.png') }}"
                                         alt="usuario">
@@ -204,6 +204,7 @@
                     registro.style.display = 'none';
                 } else {
                     navbarUser.style.display = 'none';
+                    registro.style.display = 'none';
                 }
             }
 
