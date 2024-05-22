@@ -13,7 +13,7 @@
 <body>
 
     <div class="flex flex-col">
-        <nav class="border-0 w-full h-auto  bg-gray-100 border-gray-400  dark:bg-gray-400 sticky top-0">
+        <nav class="border-0 w-full min-h-min  bg-gray-100 border-gray-400  dark:bg-gray-400 sticky top-0 z-[500]">
 
             <!-- parte correspondiente a la linea de publicidad -->
 
@@ -42,7 +42,7 @@
             <!-- comienza el navbar como tal -->
 
             <div id="logo" class="w-auto h-auto  md:w-[95vw] flex flex-wrap items-center justify-between mx-auto pl-10 pr-3 py-2 mb-5">
-                <a href="{{ route('welcome') }}" class="h-[65px] w-auto flex items-center space-x-3 mr-3">
+                <a href="{{ route('welcome') }}" class="h-[50px] sm:md:h-[65px] md:h-[80px] w-auto flex items-center space-x-3 mr-3">
                     <img src="{{ asset('images/logo.png') }}" class="max-h-full w-auto" alt="Logo">
                 </a>
                 <!--
@@ -52,16 +52,16 @@
                     <div id="registrar"
                         class="flex items-center lg:hidden mr-3 order-3 space-x-3 lg:order-4 lg:space-x-0 pt-8">
                         <a id="mnu-user-vertical" type="button"
-                            class="flex  items-center p-2 w-16 h-auto justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100">
+                            class="flex  items-center p-2  w-10  sm:w-12  md:w-14 lg:w-16 h-auto justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100">
                             <img class="w-full h-auto" src="{{ asset('images/menuLinea.png') }}" alt=""
                                 srcset="">
                         </a>
                     </div>
 
                     <div id="mnu-user"
-                        class="w-24 text-xs ml-[-25px] md:ml-[-15px] sm:w-28 md:w-32 lg:w-auto h-auto  hidden  bg-white rounded-xl pt-1 justify-start lg:bg-gray-100 absolute z-100 lg:left-0 lg:static lg:top-0 lg:flex items-center lg:justify-center ">
+                        class="mt-7 w-24 text-xs ml-[-30px] md:ml-[-15px] sm:w-28 md:w-32 lg:w-auto h-auto  hidden  bg-gray-100 border-rbl-4 border-white rounded-xl pt-1 justify-start lg:bg-gray-100 absolute z-100 lg:left-0 lg:static lg:top-0 lg:flex items-center lg:justify-center ">
                         <ul
-                            class="  border-2 border-white pb-2 w-full lg:w-auto h-auto flex flex-col  list-none justify-start items-start font-normal sm:text-sm md:text-normal lg:text-md xl:text-xl rounded-lg space-y-2 lg:space-x-6 lg:flex-row ">
+                            class="pb-2 w-full lg:w-auto h-auto flex flex-col  list-none justify-start items-start font-normal sm:text-sm md:text-normal lg:text-lg xl:text-2xl rounded-lg space-y-2 lg:space-x-6 lg:flex-row ">
                             <li class="w-full lg:w-auto hover:bg-gray-300 rounded-xl mt-0 lg:mt-2">
                                 <a id="home" href="{{ route('welcome') }}"
                                     class="w-full px-2 bg-gray-100  text-gray-900  hover:text-red-600 hover:scale-105  hover:bg-gray-200 rounded-lg">
@@ -104,10 +104,11 @@
                     @endif
                 </div>
 
-                <div id="gralregistro" class="w-auto flex order-1 lg:order-3 flex-row mr-10 items-center juatify-center mt-2">
-                    <!-- menu register -->
+                  <!-- menu register -->
 
-                    <div id="menuregister-1" class=" order-1 lg:order-3 flex-row justify-center items-center relative">
+                <div id="gralregistro" class="flex order-1 lg:order-3 flex-row mr-10 items-center juatify-center mt-2">
+
+                    <div id="menuregister-1" class="z-[50] h-auto order-1 lg:order-3 flex-row justify-center items-center  relative">
 
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
@@ -122,7 +123,7 @@
                                     @if (Auth::check())
                                         <span>{{ strtoupper(Str::limit(Auth::user()->name, 15)) }}</span>
                                     @else
-                                        <span id="verRegistro" class="lg:ml-1 lg:block ml-1">Registrarse</span>
+                                        <span id="verRegistro" class="lg:ml-1 lg:block ml-1">Validarse</span>
                                     @endif
                                 </span>
                             </div>
@@ -131,11 +132,10 @@
                     </div>
                     <!-- Dropdown menu -->
 
-                    <div id="mnu-registro"
-                        class=" hidden bg-white absolute top-40 sm:bg-white sm:text-sm sm:border-2 sm:rounded-md ">
+                    <div id="mnu-registro"  class="z-[60] hidden bg-gray-100 text-sm border-rbl-2 rounded-md absolute ml-[-15px] sm:ml-0 mt-[210px] md:mt-[230px] lg:mt-[250px]">
 
                         @if (Route::has('login'))
-                            <div class="flex flex-col justify-end  sm:text-sm md:text-md lg:text-xl text-gray-600 ">
+                            <div class="flex flex-col justify-end  sm:text-sm md:text-md lg:text-xl text-gray-600">
                                 @auth
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="inline">
                                         @csrf
