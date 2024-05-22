@@ -41,24 +41,24 @@
 
             <!-- comienza el navbar como tal -->
 
-            <div class="w-auto h-auto  md:w-[95vw] flex flex-wrap items-center justify-between mx-auto px-10 py-2 mb-5">
-                <a href="{{ route('welcome') }}" class="h-[65px] w-auto flex items-center space-x-3 mr-10">
+            <div id="logo" class="w-auto h-auto  md:w-[95vw] flex flex-wrap items-center justify-between mx-auto pl-10 pr-3 py-2 mb-5">
+                <a href="{{ route('welcome') }}" class="h-[65px] w-auto flex items-center space-x-3 mr-3">
                     <img src="{{ asset('images/logo.png') }}" class="max-h-full w-auto" alt="Logo">
                 </a>
                 <!--
                     bottom hamburguesa
                 -->
-                <div>
+                <div id="menulinea">
                     <div id="registrar"
-                        class="flex items-center lg:hidden mr-8 order-3 space-x-3 lg:order-4 lg:space-x-0 pt-8">
-                        <button id="menuVertical" type="button"
+                        class="flex items-center lg:hidden mr-3 order-3 space-x-3 lg:order-4 lg:space-x-0 pt-8">
+                        <a id="mnu-user-vertical" type="button"
                             class="flex  items-center p-2 w-16 h-auto justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100">
                             <img class="w-full h-auto" src="{{ asset('images/menuLinea.png') }}" alt=""
                                 srcset="">
-                        </button>
+                        </a>
                     </div>
 
-                    <div id="navbar-user"
+                    <div id="mnu-user"
                         class="w-32 lg:w-auto h-auto  hidden  bg-white rounded-xl pt-1 justify-start lg:bg-gray-100 absolute z-100 lg:left-0 lg:static lg:top-0 lg:flex items-center lg:justify-center ">
                         <ul
                             class="  border-2 border-white pb-2 w-full lg:w-auto h-auto flex flex-col  list-none justify-start items-start font-normal sm:text-sm md:text-normal lg:text-md xl:text-xl rounded-lg space-y-2 lg:space-x-6 lg:flex-row ">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-row justify-center items-center">
+                <div id="crud" class="flex flex-row justify-center items-center">
                     @if (Auth::check())
                         @hasrole('admin|master')
                             <div
@@ -104,21 +104,21 @@
                     @endif
                 </div>
 
-                <div id="menuRegister" class="flex order-1 lg:order-3 flex-row mr-10 items-center juatify-center mt-2">
+                <div id="gralregistro" class="w-auto flex order-1 lg:order-3 flex-row mr-10 items-center juatify-center mt-2">
                     <!-- menu register -->
 
-                    <div class=" order-1 lg:order-3 flex-row justify-center items-center relative">
+                    <div id="menuregister-1" class=" order-1 lg:order-3 flex-row justify-center items-center relative">
 
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
 
-                            <div id="register"
+                            <div id="mostrarregistra"
                                 class="mt-6 w-auto h-auto p-2 flex flex-col justify-center items-center bg-gray-100 text-xl text-gray-900 border-2 rounded-full hover:scale-105 hover:rounded-2xl hover:bg-gray-200 hover:text-red-600 hover:border-2 hover:border-white">
                                 <a type="submit" class="flex w-full lg:w-8 lg:h-8 justify-center items-center">
                                     <img class="w-5 h-5 object-cover" src="{{ asset('images/usuario.png') }}"
                                         alt="usuario">
                                 </a>
-                                <span class="hidden ml-1 lg:flex text-sm justify-center items-center">
+                                <span class="hidden ml-1 sm:flex text-sm justify-center items-center">
                                     @if (Auth::check())
                                         <span>{{ strtoupper(Str::limit(Auth::user()->name, 15)) }}</span>
                                     @else
@@ -131,7 +131,7 @@
                     </div>
                     <!-- Dropdown menu -->
 
-                    <div id="user-register"
+                    <div id="mnu-registro"
                         class=" hidden bg-white absolute top-40 sm:bg-white sm:text-sm sm:border-2 sm:rounded-md ">
 
                         @if (Route::has('login'))
@@ -176,7 +176,7 @@
             var navbarUser = document.getElementById('mnu-user');
             var registro = document.getElementById('mnu-registro');
             var userButton = document.getElementById('mnu-user-vertical');
-            var registerButton = document.getElementById('menu-gnral-register');
+            var registerButton = document.getElementById('mostrarregistra');
 
             // Función para mostrar u ocultar el menú vertical
             function toggleMenu(element) {
