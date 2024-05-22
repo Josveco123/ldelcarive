@@ -93,14 +93,14 @@
 
                 <div class="flex flex-row justify-center items-center">
                     @if (Auth::check())
-                    @hasrole('admin|master')
+                        @hasrole('admin|master')
                             <div
                                 class="hidden lg:flex w-auto h-9  px-2 mr-[2vw] flex-row relative justify-center items-center bg-gray-100 text-sm text-gray-900 hover:scale-105 hover:text-red-600 border-2 hover:rounded-lg hover:bg-gray-200 rounded-lg">
                                 <a class="justify-center items-center" href="{{ url('/home') }}">
                                     C.R.U.D.
                                 </a>
                             </div>
-                    @endhasrole
+                        @endhasrole
                     @endif
                 </div>
 
@@ -113,12 +113,11 @@
                             @csrf
 
                             <div id="register"
-                                class="pt-4 flex flex-row justify-center items-center bg-gray-100 text-xl text-gray-900 hover:scale-105 hover:rounded-2xl hover:bg-gray-200 hover:text-red-600 hover:border-2 hover:border-white">
-                                <button type="submit"
-                                    class="flex w-full lg:w-8 lg:h-8 justify-center items-center">
+                                class="mt-6 w-auto h-auto p-2 flex flex-col justify-center items-center bg-gray-100 text-xl text-gray-900 border-2 rounded-full hover:scale-105 hover:rounded-2xl hover:bg-gray-200 hover:text-red-600 hover:border-2 hover:border-white">
+                                <a type="submit" class="flex w-full lg:w-8 lg:h-8 justify-center items-center">
                                     <img class="w-5 h-5 object-cover" src="{{ asset('images/usuario.png') }}"
                                         alt="usuario">
-                                </button>
+                                </a>
                                 <span class="hidden ml-1 lg:flex text-sm justify-center items-center">
                                     @if (Auth::check())
                                         <span>{{ strtoupper(Str::limit(Auth::user()->name, 15)) }}</span>
@@ -133,7 +132,7 @@
                     <!-- Dropdown menu -->
 
                     <div id="user-register"
-                        class=" hidden bg-white absolute top-32 sm:bg-white sm:text-sm sm:border-2 sm:rounded-md ">
+                        class=" hidden bg-white absolute top-40 sm:bg-white sm:text-sm sm:border-2 sm:rounded-md ">
 
                         @if (Route::has('login'))
                             <div class="flex flex-col justify-end  sm:text-sm md:text-md lg:text-xl text-gray-600 ">
@@ -172,60 +171,63 @@
     </div>
     <script src="{{ asset('js/register.js') }}"></script>
     <script>
-        // Asignar elementos a variables
-        var navbarUser = document.getElementById('navbar-user');
-        var registro = document.getElementById('user-register');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asignar elementos a variables
+            var navbarUser = document.getElementById('mnu-user');
+            var registro = document.getElementById('mnu-registro');
+            var userButton = document.getElementById('mnu-user-vertical');
+            var registerButton = document.getElementById('menu-gnral-register');
 
-        // Función para mostrar el menú vertical
-        function showMenu(element) {
-            element.classList.remove('hidden');
-            element.classList.add('flex');
-        }
-
-        // Función para ocultar el menú vertical
-        function hideMenu(element) {
-            element.classList.add('hidden');
-            element.classList.remove('flex');
-        }
-
-        // Evento al pasar el mouse por encima del menú vertical
-        document.getElementById('menuVertical').addEventListener('mouseenter', function() {
-            showMenu(navbarUser);
-        });
-
-        // Evento al quitar el mouse de encima del menú vertical
-        document.getElementById('navbar-user').addEventListener('mouseout', function(e) {
-            if (!isMouseOverElement(navbarUser, e)) {
-                hideMenu(navbarUser);
+            // Función para mostrar u ocultar el menú vertical
+            function toggleMenu(element) {
+                element.style.display = element.style.display === 'none' ? 'flex' : 'none';
             }
-        });
 
-        // Evento al pasar el mouse por encima del menú de registro
-        document.getElementById('menuRegister').addEventListener('mouseenter', function() {
-            showMenu(registro);
-        });
+            // Evento al hacer clic en el menú vertical de usuario
+            userButton.addEventListener('click', function(e) {
+                toggleMenu(navbarUser);
+                // Detenemos la propagación del evento para evitar que se active el cierre inmediato del menú
+                e.stopPropagation();
+            });
 
-        // Evento al quitar el mouse de encima del menú de registro
-        document.getElementById('user-register').addEventListener('mouseout', function(e) {
-            if (!isMouseOverElement(registro, e)) {
-                hideMenu(registro);
+            // Evento al hacer clic en el menú de registro
+            registerButton.addEventListener('click', function(e) {
+                toggleMenu(registro);
+                // Detenemos la propagación del evento para evitar que se active el cierre inmediato del menú
+                e.stopPropagation();
+            });
+
+            // Función para manejar el evento de cambio de tamaño de la ventana
+            function handleResize() {
+                if (window.innerWidth > 1024) { // Reemplaza 992 por el ancho deseado para el tamaño 'lg'
+                    navbarUser.style.display = 'flex';
+                    registro.style.display = 'none';
+                } else {
+                    navbarUser.style.display = 'none';
+                }
             }
-        });
 
-        // Evento al hacer clic en cualquier parte del documento
-        document.addEventListener('click', function(e) {
-            if (!isMouseOverElement(navbarUser, e.target) && !isMouseOverElement(registro, e.target)) {
-                hideMenu(navbarUser);
-                hideMenu(registro);
-            }
-        });
+            // Suscribir la función al evento 'resize' de la ventana
+            window.addEventListener('resize', handleResize);
 
-        // Función para verificar si el cursor está dentro del elemento
-        function isMouseOverElement(element, event) {
-            var rect = element.getBoundingClientRect();
-            return event.clientX >= rect.left && event.clientX <= rect.right &&
-                event.clientY >= rect.top && event.clientY <= rect.bottom;
-        }
+            // Ejecutar la función una vez al cargar la página para verificar el tamaño inicial de la ventana
+            handleResize();
+
+            // Si se hizo clic en algún lugar que no sea el botón de usuario o el menú de usuario, y el tamaño de la pantalla es menor o igual a lg, cerramos el menú de usuario
+            document.addEventListener('click', function(e) {
+                if (e.target !== userButton && !navbarUser.contains(e.target) && window.innerWidth <=
+                    1024) {
+                    navbarUser.style.display = 'none';
+                } else {
+                    navbarUser.style.display = 'flex';
+                }
+
+                // Si se hizo clic en algún lugar que no sea el botón de registro o el menú de registro, cerramos el menú de registro
+                if (e.target !== registerButton && !registro.contains(e.target)) {
+                    registro.style.display = 'none';
+                }
+            });
+        });
     </script>
 </body>
 
