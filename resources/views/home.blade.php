@@ -44,15 +44,19 @@
                     <div class="w-full h-1 border-y-2 border-gray-400"></div>
 
                     <div>
+
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <div class="text-6xl text-gray-200 pl-[1vw]">
-                            @yield('crud', 'AREA PARA PROCESO')
+
+                        <div class="text-6xl text-gray-200 pl-[20px]">
+                            @yield('crud','AREA DE PROCESO')
                         </div>
+
                     </div>
+
                 </div>
             </div>
 

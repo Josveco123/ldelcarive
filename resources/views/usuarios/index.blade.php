@@ -4,7 +4,7 @@
 @endsection
 
 @section('crud')
-    <div class="py-10">
+    <div class="py-10 hidden lg:flex">
         <div class="max-w-full  mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6 lg:p-8">
                 <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
