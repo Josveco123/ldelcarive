@@ -12,7 +12,7 @@
                     <div class="w-full h-1 border-y-2 border-gray-400"></div>
 
                     <ul
-                        class="flex w-auto marker:text-red-600 flex-col justify-between ml-[1vw] text-[1.2vw] space-y-2 mt-[2vw] list-[upper-roman]">
+                        class="hidden lg:flex w-auto marker:text-red-600 flex-col justify-between ml-[1vw] text-[1.2vw] space-y-2 mt-[2vw] list-[upper-roman]">
                         <!-- opción 1 -->
                         <li class="menu-option  border-2 px-2 hover:border-red-500 hover:bg-gray-300 hover:rounded-lg">
                             <a class="no-underline" href="{{ route('productoindex') }}">Productos</a>
