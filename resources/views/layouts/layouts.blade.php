@@ -41,8 +41,10 @@
 
             <!-- comienza el navbar como tal -->
 
-            <div id="logo" class="w-auto h-auto  md:w-[95vw] flex flex-wrap items-center justify-between mx-auto pl-10 pr-3 py-2 mb-5">
-                <a href="{{ route('welcome') }}" class="h-[50px] sm:md:h-[65px] md:h-[80px] w-auto flex items-center space-x-3 mr-3">
+            <div id="logo"
+                class="w-auto h-auto  md:w-[95vw] flex flex-wrap items-center justify-between mx-auto pl-10 pr-3 py-2 mb-5">
+                <a href="{{ route('welcome') }}"
+                    class="h-[50px] sm:md:h-[65px] md:h-[80px] w-auto flex items-center space-x-3 mr-3">
                     <img src="{{ asset('images/logo.png') }}" class="max-h-full w-auto" alt="Logo">
                 </a>
                 <!--
@@ -91,7 +93,7 @@
                     </div>
                 </div>
 
-                <div id="crud" class="flex flex-row justify-center items-center">
+                <div id="crud" class="flex flex-row justify-center items-center mt-8">
                     @if (Auth::check())
                         @hasrole('admin|master')
                             <div
@@ -104,11 +106,12 @@
                     @endif
                 </div>
 
-                  <!-- menu register -->
+                <!-- menu register -->
 
                 <div id="gralregistro" class="flex order-1 lg:order-3 flex-row mr-10 items-center juatify-center mt-2">
 
-                    <div id="menuregister-1" class="z-[50] h-auto order-1 lg:order-3 flex-row justify-center items-center  relative">
+                    <div id="menuregister-1"
+                        class="z-[50] h-auto order-1 lg:order-3 flex-row justify-center items-center  relative">
 
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
@@ -132,37 +135,42 @@
                     </div>
                     <!-- Dropdown menu -->
 
-                    <div id="mnu-registro"  class="z-[60] hidden bg-gray-100 text-sm border-rbl-2 rounded-md absolute ml-[-15px] sm:ml-0 mt-[210px] md:mt-[230px] lg:mt-[250px]">
+                    <div id="mnu-registro"
+                        class="z-[60] hidden bg-gray-100 text-sm border-rbl-2 rounded-md absolute ml-[-15px] sm:ml-0 mt-[180px] md:mt-[210px]">
 
                         @if (Route::has('login'))
                             <div class="flex flex-col justify-end  sm:text-sm md:text-md lg:text-xl text-gray-600">
                                 @auth
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="inline">
-                                        @csrf
-                                        <button type="submit"
-                                            class="px-3 ring-1 ring-transparent transition focus:outline-none hover:text-black/70 hover:bg-gray-200 focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                            Log out
-                                        </button>
-                                    </form>
+                                    <div>
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                                            @csrf
+                                            <button type="submit"
+                                                class="rounded-md px-3 py-2 ring-1 ring-transparent transition focus:outline-none hover:text-black/70 hover:bg-gray-200 focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                                Log out
+                                            </button>
+                                        </form>
+                                    </div>
                                 @else
-                                    <a href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 ring-1 ring-transparent transition focus:outline-none  hover:text-black/70 hover:bg-gray-200 focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Log in
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 ring-1 ring-transparent transition  hover:text-black/70 hover:bg-gray-200 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                            Registrese
+                                    <div>
+                                        <a href="{{ route('login') }}"
+                                            class="rounded-md px-3 py-2 ring-1 ring-transparent transition focus:outline-none  hover:text-black/70 hover:bg-gray-200 focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                            Log in
                                         </a>
-                                    @endif
+
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                                class="rounded-md px-3 py-2 ring-1 ring-transparent transition  hover:text-black/70 hover:bg-gray-200 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                                Registrese
+                                            </a>
+                                        @endif
+                                    </div>
                                 @endauth
                             </div>
                         @endif
-
                     </div>
                 </div>
             </div>
+
         </nav>
         <!-- comienza la parte variable del cuerpo de la hoja -->
         <div class="mb-2">
